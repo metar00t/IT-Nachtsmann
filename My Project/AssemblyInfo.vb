@@ -8,14 +8,14 @@ Imports System.Runtime.InteropServices
 
 ' Werte der Assemblyattribute überprüfen
 
-<Assembly: AssemblyTitle("IT-Nachtsmann")>
+<Assembly: AssemblyTitle("")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("BBW Suedhessen")>
 <Assembly: AssemblyProduct("IT-Nachtsmann")>
-<Assembly: AssemblyCopyright("Copyright © BBW Suedhessen 2025")>
+<Assembly: AssemblyCopyright("")>
 <Assembly: AssemblyTrademark("")>
 
-<Assembly: ComVisible(False)>
+<Assembly: ComVisible(True)>
 
 'Die folgende GUID wird für die typelib-ID verwendet, wenn dieses Projekt für COM verfügbar gemacht wird.
 <Assembly: Guid("73c9c140-cfaf-499b-983a-5b97b7b5fd4f")>
