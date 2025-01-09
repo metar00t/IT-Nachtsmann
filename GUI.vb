@@ -1,4 +1,4 @@
-﻿Imports IT_Nachtsmann.Connection
+﻿'Imports IT_Nachtsmann.Connection
 Public Class GUI
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim AskDeviceIP As Object
@@ -8,7 +8,7 @@ Public Class GUI
 
         Title = "Preparing Connection"
         Prompt = "Please enter the IP-Address of your PTZ vue 2k Camera"
-        [Default] = "0.0.0.0"
+        [Default] = ""
 
         AskDeviceIP = InputBox(Prompt, Title, [Default])
         Dim MissingIP = String.IsNullOrEmpty(AskDeviceIP) Or String.IsNullOrWhiteSpace(AskDeviceIP)

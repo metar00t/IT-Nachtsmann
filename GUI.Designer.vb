@@ -52,6 +52,8 @@ Partial Class GUI
         Me.BtnEnd = New System.Windows.Forms.Button()
         Me.BtnStopZoomIn = New System.Windows.Forms.Button()
         Me.BtnStopZoomOut = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.NumUpDownPTZSpeed, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumUpDownPreset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -326,12 +328,32 @@ Partial Class GUI
         Me.BtnStopZoomOut.UseVisualStyleBackColor = True
         Me.BtnStopZoomOut.Visible = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(186, 292)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(77, 16)
+        Me.Label3.TabIndex = 29
+        Me.Label3.Text = "<--- Zoom In"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(184, 355)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(87, 16)
+        Me.Label4.TabIndex = 30
+        Me.Label4.Text = "Zoom Out --->"
+        '
         'GUI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(475, 475)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BtnStopZoomOut)
         Me.Controls.Add(Me.BtnStopZoomIn)
         Me.Controls.Add(Me.BtnEnd)
@@ -400,4 +422,6 @@ Partial Class GUI
     Friend WithEvents BtnEnd As Button
     Friend WithEvents BtnStopZoomIn As Button
     Friend WithEvents BtnStopZoomOut As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class

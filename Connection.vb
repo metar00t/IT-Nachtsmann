@@ -1,6 +1,5 @@
 ﻿Imports System.IO
 Imports System.Net
-Imports IT_Nachtsmann.GUI
 
 Public Module Connection
     Public Sub CamControl(URL, CMD)
@@ -18,7 +17,7 @@ Public Module Connection
             myReader = New System.IO.StreamReader(myResp.GetResponseStream)
             MessageBox.Show(myReader.ReadToEnd, "Success")
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Invalid URL: Application will restart now", "oops", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
     Public Sub PresetControl(URL, CMD)
@@ -36,7 +35,7 @@ Public Module Connection
             myReader = New System.IO.StreamReader(myResp.GetResponseStream)
             MessageBox.Show(myReader.ReadToEnd, "Success")
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Invalid URL: Application will restart now", "oops", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 End Module
