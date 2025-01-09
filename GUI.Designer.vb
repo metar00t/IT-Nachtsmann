@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class GUI
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
@@ -22,7 +22,7 @@ Partial Class Form1
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GUI))
         Me.BtnUp = New System.Windows.Forms.Button()
         Me.BtnRightUp = New System.Windows.Forms.Button()
         Me.BtnLeftUp = New System.Windows.Forms.Button()
@@ -326,7 +326,7 @@ Partial Class Form1
         Me.BtnStopZoomOut.UseVisualStyleBackColor = True
         Me.BtnStopZoomOut.Visible = False
         '
-        'Form1
+        'GUI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -362,7 +362,7 @@ Partial Class Form1
         Me.Controls.Add(Me.BtnRightUp)
         Me.Controls.Add(Me.BtnUp)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "Form1"
+        Me.Name = "GUI"
         Me.Text = "PTZ Remote Control"
         CType(Me.NumUpDownPTZSpeed, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumUpDownPreset, System.ComponentModel.ISupportInitialize).EndInit()

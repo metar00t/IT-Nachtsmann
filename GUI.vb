@@ -1,62 +1,28 @@
-﻿Imports System.IO
-Imports System.Net
-Public Class Form1
+﻿Imports IT_Nachtsmann.Connection
+Public Class GUI
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim AskURL As Object
+        Dim AskDeviceIP As Object
+        Dim Http As String = "http://"
+        Dim GetTarget As String = "/ajaxcom"
         Dim Title, Prompt, [Default] As String
 
         Title = "Establish Connection"
-        Prompt = "Please enter the URL of your Device"
+        Prompt = "Please enter the IP-Address of your Device"
         [Default] = ""
 
-        AskURL = InputBox(Prompt, Title, [Default])
-        Dim MissingInput = String.IsNullOrEmpty(AskURL)
+        AskDeviceIP = InputBox(Prompt, Title, [Default])
+        Dim MissingInput = String.IsNullOrEmpty(AskDeviceIP)
 
         If MissingInput Then
             MessageBox.Show("Please try again", "Error 404", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Close()
         End If
 
-        DeviceURL = AskURL
+        DeviceURL = Http & AskDeviceIP & GetTarget
     End Sub
     Dim StrCommand As String
     Dim DeviceURL
-    Public Sub CamControl(URL, CMD)
-        Try
-            Dim myReq As HttpWebRequest
-            Dim myResp As HttpWebResponse
-            Dim myReader As StreamReader
-            myReq = HttpWebRequest.Create(URL)
-            myReq.Method = "POST"
-            myReq.ContentType = "application/x-www-form-urlencoded"
-            myReq.Accept = "application/json"
-            Dim myData As String = "szCmd=%7B%22SysCtrl%22%3A%7B%22PtzCtrl%22%3A%7B%22nChanel%22%3A0%2C%22szPtzCmd%22%3A%22" & CMD & "%22%2C%22byValue%22%3A" & NumUpDownPTZSpeed.Value & "%7D%7D%7D"
-            myReq.GetRequestStream.Write(System.Text.Encoding.UTF8.GetBytes(myData), 0, System.Text.Encoding.UTF8.GetBytes(myData).Count)
-            myResp = myReq.GetResponse
-            myReader = New System.IO.StreamReader(myResp.GetResponseStream)
-            MessageBox.Show(myReader.ReadToEnd, "Success")
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
-    Private Sub PresetControl(URL, CMD)
-        Try
-            Dim myReq As HttpWebRequest
-            Dim myResp As HttpWebResponse
-            Dim myReader As StreamReader
-            myReq = HttpWebRequest.Create(URL)
-            myReq.Method = "POST"
-            myReq.ContentType = "application/x-www-form-urlencoded"
-            myReq.Accept = "application/json"
-            Dim myData As String = "szCmd=%7B%22SysCtrl%22%3A%7B%22PtzCtrl%22%3A%7B%22nChanel%22%3A0%2C%22szPtzCmd%22%3A%22" & CMD & "%22%2C%22byValue%22%3A" & NumUpDownPreset.Value & "%7D%7D%7D"
-            myReq.GetRequestStream.Write(System.Text.Encoding.UTF8.GetBytes(myData), 0, System.Text.Encoding.UTF8.GetBytes(myData).Count)
-            myResp = myReq.GetResponse
-            myReader = New System.IO.StreamReader(myResp.GetResponseStream)
-            MessageBox.Show(myReader.ReadToEnd, "Success")
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
+
     Private Sub BtnUp_Click(sender As Object, e As EventArgs) Handles BtnUp.Click
         StrCommand = "up_start"
         CamControl(DeviceURL, StrCommand)
