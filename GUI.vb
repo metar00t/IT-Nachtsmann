@@ -6,18 +6,21 @@ Public Class GUI
         Dim GetTarget As String = "/ajaxcom"
         Dim Title, Prompt, [Default] As String
 
-        Title = "Establish Connection"
-        Prompt = "Please enter the IP-Address of your Device"
-        [Default] = ""
+        Title = "Preparing Connection"
+        Prompt = "Please enter the IP-Address of your PTZ vue 2k Camera"
+        [Default] = "0.0.0.0"
 
         AskDeviceIP = InputBox(Prompt, Title, [Default])
-        Dim MissingInput = String.IsNullOrEmpty(AskDeviceIP)
+        Dim MissingIP = String.IsNullOrEmpty(AskDeviceIP) Or String.IsNullOrWhiteSpace(AskDeviceIP)
 
-        If MissingInput Then
-            MessageBox.Show("Please try again", "Error 404", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Close()
+        If MissingIP Then
+            Dim Debug As DialogResult = MessageBox.Show("Press Ok to restart the Application or Cancel to close the Application", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error)
+            If Debug = DialogResult.Cancel Then
+                Close()
+            Else
+                Application.Restart()
+            End If
         End If
-
         DeviceURL = Http & AskDeviceIP & GetTarget
     End Sub
     Dim StrCommand As String
