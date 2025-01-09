@@ -18,6 +18,7 @@ Public Module Connection
             MessageBox.Show(myReader.ReadToEnd, "Success")
         Catch ex As Exception
             MessageBox.Show("Invalid URL: Application will restart now", "oops", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Application.Restart()
         End Try
     End Sub
     Public Sub PresetControl(URL, CMD)
@@ -36,6 +37,7 @@ Public Module Connection
             MessageBox.Show(myReader.ReadToEnd, "Success")
         Catch ex As Exception
             MessageBox.Show("Invalid URL: Application will restart now", "oops", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Application.Restart()
         End Try
     End Sub
 End Module
