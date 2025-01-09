@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class GUI
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
@@ -22,7 +22,7 @@ Partial Class Form1
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GUI))
         Me.BtnUp = New System.Windows.Forms.Button()
         Me.BtnRightUp = New System.Windows.Forms.Button()
         Me.BtnLeftUp = New System.Windows.Forms.Button()
@@ -52,6 +52,8 @@ Partial Class Form1
         Me.BtnEnd = New System.Windows.Forms.Button()
         Me.BtnStopZoomIn = New System.Windows.Forms.Button()
         Me.BtnStopZoomOut = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.NumUpDownPTZSpeed, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumUpDownPreset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -326,12 +328,32 @@ Partial Class Form1
         Me.BtnStopZoomOut.UseVisualStyleBackColor = True
         Me.BtnStopZoomOut.Visible = False
         '
-        'Form1
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(186, 292)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(77, 16)
+        Me.Label3.TabIndex = 29
+        Me.Label3.Text = "<--- Zoom In"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(184, 355)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(87, 16)
+        Me.Label4.TabIndex = 30
+        Me.Label4.Text = "Zoom Out --->"
+        '
+        'GUI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(475, 475)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BtnStopZoomOut)
         Me.Controls.Add(Me.BtnStopZoomIn)
         Me.Controls.Add(Me.BtnEnd)
@@ -362,7 +384,7 @@ Partial Class Form1
         Me.Controls.Add(Me.BtnRightUp)
         Me.Controls.Add(Me.BtnUp)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "Form1"
+        Me.Name = "GUI"
         Me.Text = "PTZ Remote Control"
         CType(Me.NumUpDownPTZSpeed, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumUpDownPreset, System.ComponentModel.ISupportInitialize).EndInit()
@@ -400,4 +422,6 @@ Partial Class Form1
     Friend WithEvents BtnEnd As Button
     Friend WithEvents BtnStopZoomIn As Button
     Friend WithEvents BtnStopZoomOut As Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class
