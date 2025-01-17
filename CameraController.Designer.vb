@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class GUI
+Partial Class CameraController
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
@@ -22,7 +22,7 @@ Partial Class GUI
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GUI))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CameraController))
         Me.BtnUp = New System.Windows.Forms.Button()
         Me.BtnRightUp = New System.Windows.Forms.Button()
         Me.BtnLeftUp = New System.Windows.Forms.Button()
@@ -346,12 +346,12 @@ Partial Class GUI
         Me.Label4.TabIndex = 30
         Me.Label4.Text = "Zoom Out --->"
         '
-        'GUI
+        'CameraController
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(475, 475)
+        Me.ClientSize = New System.Drawing.Size(477, 485)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BtnStopZoomOut)
@@ -384,7 +384,9 @@ Partial Class GUI
         Me.Controls.Add(Me.BtnRightUp)
         Me.Controls.Add(Me.BtnUp)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "GUI"
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+        Me.Name = "CameraController"
         Me.Text = "PTZ Remote Control"
         CType(Me.NumUpDownPTZSpeed, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumUpDownPreset, System.ComponentModel.ISupportInitialize).EndInit()

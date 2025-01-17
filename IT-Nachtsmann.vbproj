@@ -114,11 +114,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI.vb">
+    <Compile Include="CameraController.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI.Designer.vb">
-      <DependentUpon>GUI.vb</DependentUpon>
+    <Compile Include="CameraController.Designer.vb">
+      <DependentUpon>CameraController.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Connection.vb" />
@@ -140,8 +140,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GUI.resx">
-      <DependentUpon>GUI.vb</DependentUpon>
+    <EmbeddedResource Include="CameraController.resx">
+      <DependentUpon>CameraController.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

@@ -11,7 +11,7 @@ Public Module Connection
             myReq.Method = "POST"
             myReq.ContentType = "application/x-www-form-urlencoded"
             myReq.Accept = "application/json"
-            Dim myData As String = "szCmd=%7B%22SysCtrl%22%3A%7B%22PtzCtrl%22%3A%7B%22nChanel%22%3A0%2C%22szPtzCmd%22%3A%22" & CMD & "%22%2C%22byValue%22%3A" & GUI.NumUpDownPTZSpeed.Value & "%7D%7D%7D"
+            Dim myData As String = "szCmd=%7B%22SysCtrl%22%3A%7B%22PtzCtrl%22%3A%7B%22nChanel%22%3A0%2C%22szPtzCmd%22%3A%22" & CMD & "%22%2C%22byValue%22%3A" & CameraController.NumUpDownPTZSpeed.Value & "%7D%7D%7D"
             myReq.GetRequestStream.Write(System.Text.Encoding.UTF8.GetBytes(myData), 0, System.Text.Encoding.UTF8.GetBytes(myData).Count)
             myResp = myReq.GetResponse
             myReader = New System.IO.StreamReader(myResp.GetResponseStream)
@@ -30,7 +30,7 @@ Public Module Connection
             myReq.Method = "POST"
             myReq.ContentType = "application/x-www-form-urlencoded"
             myReq.Accept = "application/json"
-            Dim myData As String = "szCmd=%7B%22SysCtrl%22%3A%7B%22PtzCtrl%22%3A%7B%22nChanel%22%3A0%2C%22szPtzCmd%22%3A%22" & CMD & "%22%2C%22byValue%22%3A" & GUI.NumUpDownPreset.Value & "%7D%7D%7D"
+            Dim myData As String = "szCmd=%7B%22SysCtrl%22%3A%7B%22PtzCtrl%22%3A%7B%22nChanel%22%3A0%2C%22szPtzCmd%22%3A%22" & CMD & "%22%2C%22byValue%22%3A" & CameraController.NumUpDownPreset.Value & "%7D%7D%7D"
             myReq.GetRequestStream.Write(System.Text.Encoding.UTF8.GetBytes(myData), 0, System.Text.Encoding.UTF8.GetBytes(myData).Count)
             myResp = myReq.GetResponse
             myReader = New System.IO.StreamReader(myResp.GetResponseStream)

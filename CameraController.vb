@@ -1,4 +1,4 @@
-﻿Public Class GUI
+﻿Public Class CameraController
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim AskDeviceIP As Object
         Dim Http As String = "http://"
